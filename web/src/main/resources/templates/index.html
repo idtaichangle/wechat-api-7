@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>wechat web</title>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var ws = new WebSocket('ws://'+location.host+'/wechat-ws');
+
+            ws.onmessage = function(result){
+                var json=JSON.parse(result.data);
+                if(json.action=='onLoginSuccess'){
+                    if(json.success){
+                        $("#scan").hide();
+                        $("#msg_log").show();
+                    }
+                }else if(json.action=='onMessage'){
+                    var p="<p>"+json.msg.from.nickName;
+                    if(json.msg.msgSender){
+                        p+=" >> "+json.msg.msgSender.nickName;
+                    }
+                    p+=":"+json.msg.content+"</p>";
+                    $("#msg_log").append(p);
+                }else if(json.action=='onLogout'){
+                    location.reload();
+                }
+            }
+
+            $.get("/is_login",function (result) {
+                if(result){
+                    $("#scan").hide();
+                    $("#msg_log").show();
+                }else{
+                    $("#login_img").attr("src","qr");
+                    $("#scan").show();
+                    $("#msg_log").hide();
+                }
+            });
+        });
+
+        function logout() {
+            $.get("/logout",function (result) {
+                $("#login_img").attr("src","qr");
+                $("#scan").show();
+                $("#msg_log").hide();
+                $("#msg_log").html("");
+            })
+        }
+    </script>
+</head>
+<body>
+
+<div id="scan" style="display: none">
+    <p>扫码登录微信</p>
+    <img id="login_img">
+</div>
+<div id="msg_log" style="display: none">
+    <div>消息列表 <button  onclick="logout();">退出登录</button></div>
+</div>
+</body>
+</html>
