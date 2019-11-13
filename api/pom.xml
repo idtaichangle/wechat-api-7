@@ -35,7 +35,7 @@
 
     <properties>
         <log4j.version>2.11.1</log4j.version>
-        <jackson.version>2.9.9</jackson.version>
+        <jackson.version>2.10.1</jackson.version>
         <jxbrowser.version>7.2</jxbrowser.version>
     </properties>
 
