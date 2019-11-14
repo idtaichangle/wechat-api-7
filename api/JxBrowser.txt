@@ -1,0 +1,5 @@
+renew JxBrowser 7 trial license
+delete ${USER_HOME}\.appIetviewer
+
+delete HKEY_CURRENT_USER\Software\JavaSoft\Prefs\com\adept
+delete HKEY_CURRENT_USER\Software\JavaSoft\Prefs\org\abobe
