@@ -13,5 +13,23 @@
         <module>web</module>
     </modules>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
+    <properties>
+        <log4j.version>2.11.1</log4j.version>
+        <jackson.version>2.10.1</jackson.version>
+        <jxbrowser.version>7.4</jxbrowser.version>
+    </properties>
 </project>
