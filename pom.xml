@@ -29,7 +29,7 @@
 
     <properties>
         <log4j.version>2.11.1</log4j.version>
-        <jackson.version>2.10.1</jackson.version>
-        <jxbrowser.version>7.4</jxbrowser.version>
+        <jackson.version>2.10.2</jackson.version>
+        <jxbrowser.version>7.5</jxbrowser.version>
     </properties>
 </project>
