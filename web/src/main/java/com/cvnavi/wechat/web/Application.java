@@ -2,7 +2,6 @@ package com.cvnavi.wechat.web;
 
 import com.cvnavi.wechat.WechatAdapter;
 import com.cvnavi.wechat.WechatClient;
-import com.cvnavi.wechat.browser.JxbrowserCracker;
 import com.cvnavi.wechat.model.GroupMessage;
 import com.cvnavi.wechat.model.Member;
 import com.cvnavi.wechat.model.Message;
@@ -16,10 +15,6 @@ import java.util.Date;
 
 @SpringBootApplication
 public class Application {
-
-    static {
-        JxbrowserCracker.crack();
-    }
 
     public static void showFrame(){
 
