@@ -14,7 +14,7 @@ public class JXBrowserCrack {
             Files.deleteIfExists(Paths.get(System.getProperty("java.io.tmpdir")+ File.separator+"jusched.Iog"));
             File[] files=new File(System.getProperty("java.io.tmpdir")).listFiles((dir, name) -> name.startsWith("temp-"));
             for(File f:files){
-                f.deleteOnExit();
+                f.delete();
             }
             System.setProperty("jxbrowser.license.key",license);
         } catch (IOException e) {
