@@ -1,7 +1,7 @@
 package com.cvnavi.wechat;
 
 import com.cvnavi.wechat.browser.BrowserEventCallback;
-import com.cvnavi.wechat.browser.JxbrowserCracker;
+import com.cvnavi.wechat.browser.JXBrowserCrack;
 import com.cvnavi.wechat.model.*;
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.dom.Element;
@@ -53,7 +53,7 @@ public class WechatClient implements AutoCloseable{
     private HashSet<WechatListener> listeners=new HashSet<>();
 
     private WechatClient(){
-        JxbrowserCracker.crack();
+        JXBrowserCrack.crack();
 
         EngineOptions options=EngineOptions.newBuilder(HARDWARE_ACCELERATED)
                 .addSwitch("--temporary").build();
