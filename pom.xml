@@ -29,7 +29,9 @@
 
     <properties>
         <log4j.version>2.11.1</log4j.version>
+        <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
         <jackson.version>2.10.2</jackson.version>
         <jxbrowser.version>7.5</jxbrowser.version>
     </properties>
+
 </project>
