@@ -1,13 +1,17 @@
 package com.cvnavi.wechat.browser;
 
+import com.cvnavi.wechat.ResourceReader;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Properties;
+import java.util.prefs.Preferences;
 
 public class JXBrowserCrack {
-    static String license="6P830J66YAHCM54XMVUD3DCA0YKTO6XCC2RU2KDNSUZY77O6UIGL972BC37D1ELCYJNJ";
+    static String license="1BNDHFSC1FWXTOLXDRSSEF7WDFRRAVEPW0O5GYJL6C8C3GDLHIES8Y7RV7GUXU2ETG4QYD";
     public static void crack(){
         try {
             Files.deleteIfExists(Paths.get(System.getProperty("user.home")+ File.separator+".appIetviewer"));
@@ -16,8 +20,13 @@ public class JXBrowserCrack {
             for(File f:files){
                 f.delete();
             }
-            System.setProperty("jxbrowser.license.key",license);
-        } catch (IOException e) {
+
+            Preferences.userRoot().node("/org/abobe").removeNode();
+            Preferences.userRoot().node("/com/adept").removeNode();
+
+            Properties p= ResourceReader.readProperties("jxbrowser.properties");
+            System.setProperty("jxbrowser.license.key",p.getProperty("jxbrowser.license.key"));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
