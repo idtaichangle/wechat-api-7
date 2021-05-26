@@ -31,7 +31,7 @@
         <log4j.version>2.11.1</log4j.version>
         <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
         <jackson.version>2.12.1</jackson.version>
-        <jxbrowser.version>7.12.2</jxbrowser.version>
+        <jxbrowser.version>7.15</jxbrowser.version>
     </properties>
 
 </project>
